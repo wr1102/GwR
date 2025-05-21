@@ -1,0 +1,54 @@
+#PBS -q XXX
+#PBS -l XXX
+#PBS -l XXX
+#PBS -N GwR_ESM2_t33_Location_Task_Train
+#PBS -o /path/to/train_log
+#PBS -e /path/to/train_log
+
+zsh
+source ~/.zshrc
+cd GwR
+conda activate gwr
+
+python src/train.py --task binaryclass \
+                    --structure_file /path/to/DeepLocBinary_PDB/alphafold_pdb/ \
+                    --dataset_file /path/to/DeepLocBinary_AlphaFold2/ \
+                    --max_length 1024 \
+                    --batch_size 4 \
+                    --num_workers 4 \
+                    --device cuda \
+                    --seed 42 \
+                    --epoch 100 \
+                    --init_lr 0.001 \
+                    --min_lr 0.0001 \
+                    --gradient_accumulation_steps 32 \
+                    --early_stopping \
+                    --patience 10 \
+                    --plm_type esm \
+                    --plm_dir facebook/esm2_t33_650M_UR50D \
+                    --plm_freeze \
+                    --lagwr \
+                    --g_layers 3 \
+                    --gh_dim 128 \
+                    --go_dim 128 \
+                    --rpa_threshold 0.2 \
+                    --atten_map_layers 1 \
+                    --structgwr \
+                    --dssp_token \
+                    --dssp_dim 10 \
+                    --top_k_neighbors 10 \
+                    --node_hidden_dim_scalar 128 \
+                    --node_hidden_dim_vector 128 \
+                    --edge_hidden_dim_scalar 128 \
+                    --edge_hidden_dim_vector 128 \
+                    --num_encoder_layers 3 \
+                    --dropout 0.1 \
+                    --embed_gvp_output_dim 128 \
+                    --hidden_dim 512 \
+                    --multihead_heads 8 \
+                    --linear_dropout 0.15 \
+                    --intergrate_method concat \
+                    --attention_pooling \
+                    --num_labels 1 \
+                    --record_source \
+                    --source_log /source_log/GwR_esm2_t33.csv \
