@@ -1,4 +1,4 @@
-from model.module.aa_seq import SequenceEncoder, ProSST
+from model.module.aa_seq import SequenceEncoder
 from model.module.gwr_module import Layer_Averaged_GwR, Struct_GwR
 from model.module.pooling import Attention1dPoolingHead
 from model.module.classify import ClassificationHead
