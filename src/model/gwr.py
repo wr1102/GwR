@@ -97,7 +97,6 @@ class GwR(torch.nn.Module):
                     batch['padding_mask'].to(self.device),
                     batch['confidence'].to(self.device)
                 )
-                print("123456")
                 if self.args.intergrate_method == 'concat':
                     la_gwr_rep = self.gwr_plm_out_layernorm(output)
                     struct_gwr_rep = self.gwr_struc_out_layernorm(struct_gwr_rep)
