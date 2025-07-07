@@ -10,7 +10,12 @@ Fine-tuning Protein Language Models (PLMs) either by relying solely on sequence 
 
 ### News
 
-[2025.05.20] Our paper has been submitted to **[JCIM](https://pubs.acs.org/journal/jcisd8)**, and the first round of revisions has been completed.
+[2025.05.20] Our paper has been submitted to **[Journal of Chemical Information and Modeling (JCIM)](https://pubs.acs.org/journal/jcisd8)**, and the first round of revisions has been completed.
+
+[2025.06.18] Our paper has been accepted by **[JCIM](https://pubs.acs.org/journal/jcisd8)**.
+
+[2025.07.04] Our paper has been published on **[JCIM](https://pubs.acs.org/doi/abs/10.1021/acs.jcim.5c00856)**.
+
 
 ### Paper Results
 
