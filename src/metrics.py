@@ -127,7 +127,7 @@ class Metrics:
 
         elif self.task_type == "multilabel":
             for metric in self.metrics_dict.values():
-                metric.update(torch.sigmoid(pred), target.float())
+                metric.update(torch.sigmoid(pred), target.long())
 
         elif self.task_type in ["multiclass", "binaryclass"]:
             if self.num_classes > 2:
